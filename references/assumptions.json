@@ -1,0 +1,41 @@
+{
+  "version": "1.0.1",
+  "note": "组合构建与情景假设的可调参数。改这里就能换一套口径，不用动脚本。",
+  "rules": {
+    "min_div_count": 11,
+    "min_size": 2.0,
+    "min_realize_ratio": 0.60,
+    "tax_rate_hk": 0.20,
+    "top_n": 5,
+    "weight_mode": "equal",
+    "weight_cap": 0.30
+  },
+  "capital": 1000000,
+  "years": 3,
+  "scenarios": [
+    {
+      "key": "good",
+      "label": "好",
+      "price_return": 0.08,
+      "div_growth": 0.05,
+      "desc": "估值温和修复：红利资产被重新定价，价格年化 +8%，成分股分红年增 5%",
+      "anchor": "5 只标的近 1 年价格涨幅最好的一只是 +9.2%，+8% 已接近那一档"
+    },
+    {
+      "key": "base",
+      "label": "中",
+      "price_return": 0.01,
+      "div_growth": 0.03,
+      "desc": "横盘震荡：价格基本不动，靠股息吃饭，分红年增 3%",
+      "anchor": "5 只标的近 1 年价格涨幅均值 +1.3%，取 +1% 基本是复刻现状"
+    },
+    {
+      "key": "bad",
+      "label": "坏",
+      "price_return": -0.07,
+      "div_growth": 0.00,
+      "desc": "杀估值：红利板块补跌，价格年化 -7%，分红停止增长",
+      "anchor": "5 只标的近 1 年平均最大回撤 -17.5%，分三年摊完约 -6.3%/年，-7% 略保守"
+    }
+  ]
+}
